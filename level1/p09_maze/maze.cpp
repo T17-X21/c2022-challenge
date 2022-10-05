@@ -3,6 +3,7 @@
 #include<cstdlib>
 #include<ctime>
 #include<cstdbool>
+#include<conio.h>
 #include<cstring>
 #include<windows.h>
 using namespace std;
@@ -83,6 +84,7 @@ void CreateMaze()
 }
 void PrintMaze()
 {
+	Sleep(100);
 	system("Cls");
 	for (int i = 0; i <= Width; i++)
 	{
@@ -99,68 +101,82 @@ void PlayMaze(int xx, int yy)
 	char way;
 	while (true)
 	{
-		cin >> way;
-		if (way == 'w')
+		while (way = _getch())
 		{
-			if (maze[x - 1][y] != '#')
+			if (way == 'w')
 			{
-				if (maze[x - 1][y] == 'E')
+				if (maze[x - 1][y] != '#')
 				{
-					printf("WIN\n");
-					return;
+					if (maze[x - 1][y] == 'E')
+					{
+						maze[x][y] = ' ';
+						maze[x - 1][y] = '*';
+						PrintMaze();
+						printf("WIN\n");
+						return;
+					}
+					maze[x][y] = ' ';
+					maze[x - 1][y] = '*';
+					x--;
 				}
-				maze[x][y] = ' ';
-				maze[x - 1][y] = '*';
-				x--;
 			}
-		}
-		if (way == 's')
-		{
-			if (maze[x + 1][y] != '#')
+			if (way == 's')
 			{
-				if (maze[x + 1][y] == 'E')
+				if (maze[x + 1][y] != '#')
 				{
-					printf("WIN\n");
-					return;
+					if (maze[x + 1][y] == 'E')
+					{
+						maze[x][y] = ' ';
+						maze[x + 1][y] = '*';
+						PrintMaze();
+						printf("WIN\n");
+						return;
+					}
+					maze[x][y] = ' ';
+					maze[x + 1][y] = '*';
+					x++;
 				}
-				maze[x][y] = ' ';
-				maze[x + 1][y] = '*';
-				x++;
 			}
-		}
-		if (way == 'a')
-		{
-			if (maze[x][y - 1] != '#')
+			if (way == 'a')
 			{
-				if (maze[x][y - 1] == 'E')
+				if (maze[x][y - 1] != '#')
 				{
-					printf("WIN\\n");
-					return;
+					if (maze[x][y - 1] == 'E')
+					{
+						maze[x][y] = ' ';
+						maze[x][y - 1] = '*';
+						PrintMaze();
+						printf("WIN\\n");
+						return;
+					}
+					maze[x][y] = ' ';
+					maze[x][y - 1] = '*';
+					y--;
 				}
-				maze[x][y] = ' ';
-				maze[x][y - 1] = '*';
-				y--;
 			}
-		}
-		if (way == 'd')
-		{
-			if (maze[x][y + 1] != '#')
+			if (way == 'd')
 			{
-				if (maze[x][y + 1] == 'E')
+				if (maze[x][y + 1] != '#')
 				{
-					printf("WIN\n");
-					return;
+					if (maze[x][y + 1] == 'E')
+					{
+						maze[x][y] = ' ';
+						maze[x][y + 1] = '*';
+						PrintMaze();
+						printf("WIN\n");
+						return;
+					}
+					maze[x][y] = ' ';
+					maze[x][y + 1] = '*';
+					y++;
 				}
-				maze[x][y] = ' ';
-				maze[x][y + 1] = '*';
-				y++;
 			}
+			if (way == 'e')
+			{
+				return;
+			}
+			PrintMaze();
 		}
-		if (way == 'e')
-		{
-			return;
-		}
-		PrintMaze();
 	}
 }
 void StartGame()
