@@ -84,7 +84,7 @@ void CreateMaze()
 }
 void PrintMaze()
 {
-	Sleep(100);
+	Sleep(200);
 	system("Cls");
 	for (int i = 0; i <= Width; i++)
 	{
