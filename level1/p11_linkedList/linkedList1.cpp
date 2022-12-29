@@ -31,7 +31,7 @@ int main()
 	int Item;
 	InitList(&Linklist);
 	printf("Input:\n");
-	while (scanf_s("%d", &Item), Item != -1)
+	while (scanf("%d", &Item), Item != -1)
 	{
 		push_back(&Linklist, Item);
 	}
@@ -40,7 +40,7 @@ int main()
 	show_list(&Linklist);
 	resver(&Linklist);
 	printf("Find:\n");
-	scanf_s("%d", &Item);
+	scanf("%d",&Item);
 	p = find(&Linklist, Item);
 	if (p == NULL)
 	{
@@ -102,8 +102,9 @@ void show_list(List* list)
 	Node* p = list->first->next;
 	while (p != NULL)
 	{
-		printf("%d-->", p->data);
+		printf("%d", p->data);
 		p = p->next;
+		if(p!=NULL) printf("->"); else printf("\n");
 	}
 	printf("Nul.\n");
 }
