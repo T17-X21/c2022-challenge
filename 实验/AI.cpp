@@ -208,6 +208,7 @@ void AI()
 	st[step][1] = y;
 	//printf("%d %d\n", st[step][0],st[step][1]);
 	ChangeColor();
+	settextcolor(RGB(255,0,0));
 	fillcircle(x * 30, y * 30 + 60, r);
 	_stprintf_s(stepch, _T("%d"), step);
 	if (step >= 100)

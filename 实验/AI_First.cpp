@@ -29,4 +29,5 @@ void AI_First(int type)
 	settextstyle(&f);
 	setbkmode(TRANSPARENT);
 	outtextxy(st[step][0] * 30 - 8, st[step][1] * 30 + 60 - 16, stepch);
+
 }

@@ -37,6 +37,8 @@
     <ClCompile Include="JudgeGame.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player2.cpp" />
+    <ClCompile Include="PrintMap.cpp" />
+    <ClCompile Include="PrintStep.cpp" />
     <ClCompile Include="ReversalChess.cpp" />
     <ClCompile Include="StartGame.cpp" />
     <ClCompile Include="StartGame2.cpp" />

@@ -4,10 +4,10 @@
 
 void ChangeColor()
 {
-	switch (gettextcolor())
+	switch (getfillcolor())
 	{
-	case WHITE:settextcolor(BLACK); setfillcolor(WHITE); break;
-	case BLACK:settextcolor(WHITE); setfillcolor(BLACK); break;
-	default:break;
+	case BLACK:settextcolor(BLACK); setfillcolor(WHITE); break;
+	case WHITE:settextcolor(WHITE); setfillcolor(BLACK); break;
+	default:settextcolor(WHITE); setfillcolor(BLACK); break;
 	}
 }

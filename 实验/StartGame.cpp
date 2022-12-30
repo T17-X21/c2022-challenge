@@ -43,6 +43,8 @@ int StartGame()
 						ChangeColor();
 						fillcircle(x * 30, y * 30 + 60, r);
 						_stprintf_s(stepch, _T("%d"), step);
+						//PrintMap();
+						//PrintStep();
 						if (step >= 100)
 						{
 							LOGFONT f;

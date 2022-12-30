@@ -30,3 +30,5 @@ int AIPlay2_F_2(int n, int score);
 void ReversalChess();
 void FindFirstPosition();
 void StartGame3();
+void PrintMap();
+void PrintStep();

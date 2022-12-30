@@ -96,6 +96,12 @@
     <ClCompile Include="StartGame3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="PrintMap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintStep.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gobang.h">

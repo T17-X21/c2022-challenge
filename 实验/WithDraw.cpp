@@ -9,11 +9,12 @@ extern int step;
 void Withdraw()
 {
 	const int r = 15;
-	int x1, y1;
+	int x1, y1, c;
 	x1 = st[step][0];
 	y1 = st[step][1];
 	step--;
 	a[x1][y1] = 0;
+	c = getfillcolor();
 	setlinestyle(PS_SOLID | PS_ENDCAP_FLAT, 2);
 	setfillcolor(BROWN);
 	solidrectangle(max(21, x1 * 30 - r), max(81, y1 * 30 + 60 - r), min(459, x1 * 30 + r), min(519, y1 * 30 + 60 + r));
@@ -30,4 +31,5 @@ void Withdraw()
 	line(20, 80, 20, 520);
 	line(460, 80, 460, 520);
 	setlinestyle(PS_SOLID | PS_ENDCAP_FLAT, 2);
+	setfillcolor(c);
 }

@@ -6,9 +6,12 @@ extern int Forbidden;
 
 void EndGameForbidden()
 {
-	int color = 0;
-	if (gettextcolor() == WHITE) color = 1;
+	int textcolor, fillcolor;
+	textcolor = gettextcolor();
+	fillcolor = getfillcolor();
 	settextcolor(BLACK);
+	setfillcolor(RGB(117, 250, 141));
+	solidrectangle(138, 538, 242, 582);
 	LOGFONT f;
 	gettextstyle(&f);
 	f.lfHeight = 36;
@@ -20,7 +23,8 @@ void EndGameForbidden()
 	case 3:outtextxy(25, 545, L"长连禁手违规"); break;
 	default:printf("Forbidden Error!\n"); break;
 	}
-	if (color == 1) settextcolor(WHITE);
+	settextcolor(textcolor);
+	setfillcolor(fillcolor);
 	while (true)
 	{
 		ExMessage msg = { 0 };
@@ -42,7 +46,8 @@ void EndGameForbidden()
 				settextstyle(&f);
 				setbkmode(TRANSPARENT);
 				outtextxy(143, 545, L"AI代下");
-				if (color == 1) settextcolor(WHITE);
+				settextcolor(textcolor);
+				setfillcolor(fillcolor);
 				//settextcolor(BLACK);
 				break;
 			}
