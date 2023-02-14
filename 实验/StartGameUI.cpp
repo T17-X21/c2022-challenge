@@ -20,14 +20,16 @@ void StartGameUI(int type)
 	
 	if (type != 3)
 	{
-		fillrectangle(250, 540, 350, 580);
+		fillrectangle(250, 540, 330, 580);
+		fillrectangle(330, 540, 350, 580);
 		gettextstyle(&f);
 		f.lfHeight = 32;
 		_tcscpy_s(f.lfFaceName, _T("¿¬Ìå"));
 		f.lfQuality = ANTIALIASED_QUALITY;
 		settextstyle(&f);
 		setbkmode(TRANSPARENT);
-		outtextxy(270, 545, L"»ÚÆå");
+		outtextxy(260, 545, L"»ÚÆå");
+		outtextxy(333, 545, L">");
 	}
 
 	if (type == 1)

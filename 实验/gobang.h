@@ -32,3 +32,5 @@ void FindFirstPosition();
 void StartGame3();
 void PrintMap();
 void PrintStep();
+void WithdrawAnyStep();
+void PrintChess(int step, int x, int y);

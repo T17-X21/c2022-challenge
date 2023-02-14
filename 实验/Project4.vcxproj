@@ -37,6 +37,7 @@
     <ClCompile Include="JudgeGame.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player2.cpp" />
+    <ClCompile Include="Printchess.cpp" />
     <ClCompile Include="PrintMap.cpp" />
     <ClCompile Include="PrintStep.cpp" />
     <ClCompile Include="ReversalChess.cpp" />
@@ -48,6 +49,7 @@
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="UI_AI.cpp" />
     <ClCompile Include="WithDraw.cpp" />
+    <ClCompile Include="WithdrawAnyStep.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gobang.h" />

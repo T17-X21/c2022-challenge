@@ -13,8 +13,6 @@ extern int Forbidden;
 int StartGame()
 {
 	const int distance = 10;
-	const int r = 12;
-	TCHAR stepch[10];
 	step = 0;
 
 	setfillcolor(WHITE);
@@ -33,49 +31,13 @@ int StartGame()
 				{
 					x = (msg.x + distance) / 30;
 					y = (msg.y + distance - 60) / 30;
-					//printf("%d %d\n", x, y);
 					if (a[x][y] == 0)
 					{
 						step++;
 						a[x][y] = 1;
 						st[step][0] = x;
 						st[step][1] = y;
-						ChangeColor();
-						fillcircle(x * 30, y * 30 + 60, r);
-						_stprintf_s(stepch, _T("%d"), step);
-						//PrintMap();
-						//PrintStep();
-						if (step >= 100)
-						{
-							LOGFONT f;
-							gettextstyle(&f);
-							f.lfHeight = 16;
-							f.lfQuality = ANTIALIASED_QUALITY;
-							settextstyle(&f);
-							setbkmode(TRANSPARENT);
-							outtextxy(x * 30 - 12, y * 30 + 60 - 8, stepch);
-						}
-						else
-						if (step >= 10)
-						{
-							LOGFONT f;
-							gettextstyle(&f);
-							f.lfHeight = 24;
-							f.lfQuality = ANTIALIASED_QUALITY;
-							settextstyle(&f);
-							setbkmode(TRANSPARENT);
-							outtextxy(x * 30 - 12, y * 30 + 60 - 12, stepch);
-						}
-						else
-						{
-							LOGFONT f;
-							gettextstyle(&f);
-							f.lfHeight = 32;
-							f.lfQuality = ANTIALIASED_QUALITY;
-							settextstyle(&f);
-							setbkmode(TRANSPARENT);
-							outtextxy(x * 30 - 8, y * 30 + 60 - 16, stepch);
-						}
+						PrintChess(step, x, y);
 						if (JudgeGame(x,y) == 1)
 						{
 							if (!AI_FIRST) EndGameBLACK(1);
@@ -89,7 +51,6 @@ int StartGame()
 								EndGameForbidden();
 								ChangeColor();
 								continue;
-								//break;
 							}
 						}
 						if (step == 225)
@@ -97,7 +58,6 @@ int StartGame()
 							EndGameDraw(1);
 							break;
 						}
-						//Player2();
 						AI();
 					}
 				}
@@ -125,13 +85,17 @@ int StartGame()
 					}
 					continue;
 				}
-				if (msg.x >= 250 && msg.x <= 350 && msg.y >= 540 && msg.y <= 580)
+				if (msg.x >= 250 && msg.x <= 330 && msg.y >= 540 && msg.y <= 580)
 				{
 					if (step >= 2 || step == 1 && !AI_FIRST)
 					{
 						Withdraw();
 						Withdraw();
 					}
+				}
+				if (msg.x >= 330 && msg.x <= 350 && msg.y >= 540 && msg.y <= 580 && step >= 2)
+				{
+					WithdrawAnyStep();
 				}
 			}
 		}

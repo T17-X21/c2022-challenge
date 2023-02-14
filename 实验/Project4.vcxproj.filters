@@ -102,6 +102,12 @@
     <ClCompile Include="PrintStep.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="WithdrawAnyStep.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Printchess.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gobang.h">
