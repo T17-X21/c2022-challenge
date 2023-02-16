@@ -27,6 +27,7 @@
     <ClCompile Include="ClearBoard.cpp" />
     <ClCompile Include="ClickBottom.cpp" />
     <ClCompile Include="ClickBottom2.cpp" />
+    <ClCompile Include="EndGame.cpp" />
     <ClCompile Include="EndGameBLACK.cpp" />
     <ClCompile Include="EndGameDraw.cpp" />
     <ClCompile Include="EndGameForbidden.cpp" />

@@ -279,13 +279,12 @@ void AI()
 	}
 	if (JudgeGame(x, y) == 1)
 	{
-		if(!AI_FIRST) EndGameWHITE(1);
-		if (AI_FIRST) EndGameBLACK(1);
+		if (!AI_FIRST) EndGame(1, 2); else EndGame(1, 1);
 		return;
 	}
 	if (step >= 225)
 	{
-		EndGameDraw(1);
+		EndGame(1, 3);
 		return;
 	}
 

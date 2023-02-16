@@ -9,104 +9,130 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="资源文件">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="源文件\AI">
+      <UniqueIdentifier>{d668d076-9331-4648-82c7-da3a13ba85cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\悔棋">
+      <UniqueIdentifier>{d93622e4-ac58-4b2c-af6a-472c7bd978e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\UI">
+      <UniqueIdentifier>{3d1ac4e6-205c-413a-9704-d349bdd3597c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\机器对下">
+      <UniqueIdentifier>{fcd79730-a824-4d40-95fe-de0d9a9ca325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\游戏进程">
+      <UniqueIdentifier>{aad7dbee-5ecc-448d-bfbf-4948d126fda4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\棋局判断">
+      <UniqueIdentifier>{8c076485-c4bc-4a08-bc59-46bb8da65883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\按键交互">
+      <UniqueIdentifier>{3f88378f-fcc8-4ea9-8e31-0ab77bb1bd15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\双人模式">
+      <UniqueIdentifier>{6d24262e-f3cc-43d9-815d-aa31a8ef5e50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\测试用/废案">
+      <UniqueIdentifier>{52d1a019-4df5-400c-b6e2-ff17a32fcb3d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="UI.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ClickBottom.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ExitGame.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="StartGame.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="AI.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="JudgeGame.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="StartGameUI.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="EndGameBLACK.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="EndGameWHITE.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Player2.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="EndGameDraw.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ClearBoard.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="WithDraw.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="StartUI.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ClickBottom2.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="StartGame2.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="AI_Score.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="AI_First.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ChangeColor.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="UI_AI.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="JudgeForbidden.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="EndGameForbidden.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="AI_2.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ReversalChess.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="FindFirstPosition.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="StartGame3.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="PrintMap.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="PrintStep.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\悔棋</Filter>
     </ClCompile>
     <ClCompile Include="WithdrawAnyStep.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\悔棋</Filter>
+    </ClCompile>
+    <ClCompile Include="UI_AI.cpp">
+      <Filter>源文件\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>源文件\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="StartUI.cpp">
+      <Filter>源文件\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="StartGameUI.cpp">
+      <Filter>源文件\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Player2.cpp">
+      <Filter>源文件\双人模式</Filter>
+    </ClCompile>
+    <ClCompile Include="StartGame2.cpp">
+      <Filter>源文件\双人模式</Filter>
+    </ClCompile>
+    <ClCompile Include="StartGame3.cpp">
+      <Filter>源文件\机器对下</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintMap.cpp">
+      <Filter>源文件\测试用/废案</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintStep.cpp">
+      <Filter>源文件\测试用/废案</Filter>
+    </ClCompile>
+    <ClCompile Include="FindFirstPosition.cpp">
+      <Filter>源文件\测试用/废案</Filter>
+    </ClCompile>
+    <ClCompile Include="JudgeForbidden.cpp">
+      <Filter>源文件\棋局判断</Filter>
+    </ClCompile>
+    <ClCompile Include="JudgeGame.cpp">
+      <Filter>源文件\棋局判断</Filter>
+    </ClCompile>
+    <ClCompile Include="AI.cpp">
+      <Filter>源文件\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="AI_2.cpp">
+      <Filter>源文件\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="AI_Score.cpp">
+      <Filter>源文件\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="AI_First.cpp">
+      <Filter>源文件\游戏进程</Filter>
+    </ClCompile>
+    <ClCompile Include="ClickBottom2.cpp">
+      <Filter>源文件\双人模式</Filter>
+    </ClCompile>
+    <ClCompile Include="ClickBottom.cpp">
+      <Filter>源文件\按键交互</Filter>
+    </ClCompile>
+    <ClCompile Include="ExitGame.cpp">
+      <Filter>源文件\游戏进程</Filter>
+    </ClCompile>
+    <ClCompile Include="EndGameForbidden.cpp">
+      <Filter>源文件\游戏进程</Filter>
     </ClCompile>
     <ClCompile Include="Printchess.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="StartGame.cpp">
+      <Filter>源文件\游戏进程</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeColor.cpp">
+      <Filter>源文件\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="ClearBoard.cpp">
+      <Filter>源文件\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="ReversalChess.cpp">
+      <Filter>源文件\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="EndGame.cpp">
+      <Filter>源文件\游戏进程</Filter>
+    </ClCompile>
+    <ClCompile Include="EndGameDraw.cpp">
+      <Filter>源文件\测试用/废案</Filter>
+    </ClCompile>
+    <ClCompile Include="EndGameBLACK.cpp">
+      <Filter>源文件\测试用/废案</Filter>
+    </ClCompile>
+    <ClCompile Include="EndGameWHITE.cpp">
+      <Filter>源文件\测试用/废案</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

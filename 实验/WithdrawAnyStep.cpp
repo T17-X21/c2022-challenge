@@ -110,7 +110,6 @@ int WithdrawStepBottom()
 
 void Draw(int backstep)
 {
-	TCHAR stepch[10];
 	UI();
 	StartGameUI(1);
 	ClearBoard();
