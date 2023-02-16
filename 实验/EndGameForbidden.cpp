@@ -48,7 +48,6 @@ void EndGameForbidden()
 				outtextxy(143, 545, L"AI´úÏÂ");
 				settextcolor(textcolor);
 				setfillcolor(fillcolor);
-				//settextcolor(BLACK);
 				break;
 			}
 		}

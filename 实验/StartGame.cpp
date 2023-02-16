@@ -37,7 +37,7 @@ int StartGame()
 						a[x][y] = 1;
 						st[step][0] = x;
 						st[step][1] = y;
-						PrintChess(step, x, y);
+						PrintChess(step, x, y, 0);
 						if (JudgeGame(x,y) == 1)
 						{
 							if (!AI_FIRST) EndGame(1, 1); else EndGame(1, 2);

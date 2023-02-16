@@ -33,5 +33,5 @@ void StartGame3();
 void PrintMap();
 void PrintStep();
 void WithdrawAnyStep();
-void PrintChess(int step, int x, int y);
+void PrintChess(int step, int x, int y, int color);
 void EndGame(int type,int situation);

@@ -96,14 +96,8 @@ int AIPlay2_F_2(int n, int score)
 
 void AI_2()
 {
-	const int r = 12;
 	x = 0; y = 0; ans = -30000;
-	TCHAR stepch[10];
-	
 	FindFirstPosition();
-
-	//AIPlay();
-	//AIPlay2(1,0);
 	ReversalChess();
 	AIPlay2_F_2(1, 0);
 	ReversalChess();
@@ -111,41 +105,7 @@ void AI_2()
 	step++;
 	st[step][0] = x;
 	st[step][1] = y;
-	//printf("%d %d\n", st[step][0],st[step][1]);
-	ChangeColor();
-	fillcircle(x * 30, y * 30 + 60, r);
-	_stprintf_s(stepch, _T("%d"), step);
-	if (step >= 100)
-	{
-		LOGFONT f;
-		gettextstyle(&f);
-		f.lfHeight = 16;
-		f.lfQuality = ANTIALIASED_QUALITY;
-		settextstyle(&f);
-		setbkmode(TRANSPARENT);
-		outtextxy(x * 30 - 12, y * 30 + 60 - 8, stepch);
-	}
-	else
-		if (step >= 10)
-		{
-			LOGFONT f;
-			gettextstyle(&f);
-			f.lfHeight = 24;
-			f.lfQuality = ANTIALIASED_QUALITY;
-			settextstyle(&f);
-			setbkmode(TRANSPARENT);
-			outtextxy(x * 30 - 12, y * 30 + 60 - 12, stepch);
-		}
-		else
-		{
-			LOGFONT f;
-			gettextstyle(&f);
-			f.lfHeight = 32;
-			f.lfQuality = ANTIALIASED_QUALITY;
-			settextstyle(&f);
-			setbkmode(TRANSPARENT);
-			outtextxy(x * 30 - 8, y * 30 + 60 - 16, stepch);
-		}
+	PrintChess(step, x, y, 0);
 	if (JudgeGame(x, y) == 1)
 	{
 		if (!AI_FIRST) EndGame(1, 1); else EndGame(1, 2);

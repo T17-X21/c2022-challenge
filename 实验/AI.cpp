@@ -16,102 +16,6 @@ int xx[DEPTH + 1] = { 0 }, yy[DEPTH + 1] = { 0 };
 int alpha[DEPTH + 1] = { -MAX_INT }, beta[DEPTH + 1] = { MAX_INT };
 extern bool AI_FIRST;
 
-void AIPlay()
-{
-	int i, j, score = -1, score1 = 0, score2 = 0;
-	for (i = 1; i <= 15; i++)
-	{
-		for (j = 1; j <= 15; j++)
-		{
-			if (a[i][j] == 0)
-			{
-				score1 = AI_score(i, j, 2);
-				score2 = AI_score(i, j, 1);
-				if (score1 > score)
-				{
-					x = i;
-					y = j;
-					score = score1;
-				}
-				if (score2 > score)
-				{
-					x = i;
-					y = j;
-					score = score2;
-				}
-			}
-		}
-	}
-}
-
-int AIPlay2(int n, int score)
-{
-	int score1 = 0, score2 = 0;
-	if (n > DEPTH)
-	{
-		if (score > ans)
-		{
-			x = xx[1];
-			y = yy[1];
-			ans = score;
-		}
-		return score;
-	}
-	if (n % 2 == 0)
-	{
-		//beta[n] = MAX_INT;
-		for (int i = 1; i <= 15; i++)
-		{
-			for (int j = 1; j <= 15; j++)
-			{
-				if (a[i][j] == 0)
-				{
-					score1 = AI_score(i, j, 1);
-					score2 = AI_score(i, j, 2);
-					a[i][j] = 1;
-					xx[n] = i;
-					yy[n] = j;
-					beta[n] = min(beta[n], AIPlay2(n + 1, score - score1 - score2));
-					if (beta[n] <= alpha[n - 1])
-					{
-						a[i][j] = 0;
-						return beta[n];
-					}
-					a[i][j] = 0;
-				}
-			}
-		}
-		return beta[n];
-	}
-	else
-		if (n % 2 == 1)
-		{
-			//alpha[n] = -MAX_INT;
-			for (int i = 1; i <= 15; i++)
-			{
-				for (int j = 1; j <= 15; j++)
-				{
-					if (a[i][j] == 0)
-					{
-						score1 = AI_score(i, j, 2);
-						score2 = AI_score(i, j, 1);
-						a[i][j] = 2;
-						xx[n] = i;
-						yy[n] = j;
-						alpha[n] = max(alpha[n], AIPlay2(n + 1, score + score1 + score2));
-						if (alpha[n] >= beta[n - 1])
-						{
-							a[i][j] = 0;
-							return alpha[n];
-						}
-						a[i][j] = 0;
-					}
-				}
-			}
-			return alpha[n];
-		}
-}
-
 int AIPlay2_F(int n, int score)
 {
 	int score1 = 0, score2 = 0;
@@ -127,7 +31,6 @@ int AIPlay2_F(int n, int score)
 	}
 	if (n % 2 == 0)
 	{
-		//beta[n] = MAX_INT;
 		for (int i = 1; i <= 15; i++)
 		{
 			for (int j = 1; j <= 15; j++)
@@ -159,7 +62,6 @@ int AIPlay2_F(int n, int score)
 	else
 		if (n % 2 == 1)
 		{
-			//alpha[n] = -MAX_INT;
 			for (int i = 1; i <= 15; i++)
 			{
 				for (int j = 1; j <= 15; j++)
@@ -206,76 +108,12 @@ void AI()
 	step++;
 	st[step][0] = x;
 	st[step][1] = y;
-	//printf("%d %d\n", st[step][0],st[step][1]);
-	ChangeColor();
-	settextcolor(RGB(255,0,0));
-	fillcircle(x * 30, y * 30 + 60, r);
-	_stprintf_s(stepch, _T("%d"), step);
-	if (step >= 100)
-	{
-		LOGFONT f;
-		gettextstyle(&f);
-		f.lfHeight = 16;
-		f.lfQuality = ANTIALIASED_QUALITY;
-		settextstyle(&f);
-		setbkmode(TRANSPARENT);
-		outtextxy(x * 30 - 12, y * 30 + 60 - 8, stepch);
-	}
-	else
-		if (step >= 10)
-		{
-			LOGFONT f;
-			gettextstyle(&f);
-			f.lfHeight = 24;
-			f.lfQuality = ANTIALIASED_QUALITY;
-			settextstyle(&f);
-			setbkmode(TRANSPARENT);
-			outtextxy(x * 30 - 12, y * 30 + 60 - 12, stepch);
-		}
-		else
-		{
-			outtextxy(x * 30 - 8, y * 30 + 60 - 16, stepch);
-		}
+	PrintChess(step, x, y, 255);
+	
 	if (step > 2)
 	{
-		step-=2;
-		if (AI_FIRST)
-			settextcolor(WHITE);
-		else
-			settextcolor(BLACK);
-		_stprintf_s(stepch, _T("%d"), step);
-		if (step >= 100)
-		{
-			LOGFONT f;
-			gettextstyle(&f);
-			f.lfHeight = 16;
-			f.lfQuality = ANTIALIASED_QUALITY;
-			settextstyle(&f);
-			setbkmode(TRANSPARENT);
-			outtextxy(st[step][0] * 30 - 12, st[step][1] * 30 + 60 - 8, stepch);
-		}
-		else
-			if (step >= 10)
-			{
-				LOGFONT f;
-				gettextstyle(&f);
-				f.lfHeight = 24;
-				f.lfQuality = ANTIALIASED_QUALITY;
-				settextstyle(&f);
-				setbkmode(TRANSPARENT);
-				outtextxy(st[step][0] * 30 - 12, st[step][1] * 30 + 60 - 12, stepch);
-			}
-			else
-			{
-				LOGFONT f;
-				gettextstyle(&f);
-				f.lfHeight = 32;
-				f.lfQuality = ANTIALIASED_QUALITY;
-				settextstyle(&f);
-				setbkmode(TRANSPARENT);
-				outtextxy(st[step][0] * 30 - 8, st[step][1] * 30 + 60 - 16, stepch);
-			}
-		step+=2;
+		if (!AI_FIRST) setfillcolor(BLACK); else setfillcolor(WHITE);
+		PrintChess(step - 2, st[step - 2][0], st[step - 2][1], 0);
 	}
 	if (JudgeGame(x, y) == 1)
 	{

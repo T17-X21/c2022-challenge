@@ -120,7 +120,7 @@ void Draw(int backstep)
 		step = (backstep + 1) / 2 * 2;
 		for (int i = 1; i <= step; i++)
 		{
-			PrintChess(i, st[i][0], st[i][1]);
+			PrintChess(i, st[i][0], st[i][1], 0);
 			if (i % 2 == 1)
 			{
 				a[st[i][0]][st[i][1]] = 1;
@@ -136,7 +136,7 @@ void Draw(int backstep)
 		step = backstep / 2 * 2 + 1;
 		for (int i = 1; i <= step; i++)
 		{
-			PrintChess(i, st[i][0], st[i][1]);
+			PrintChess(i, st[i][0], st[i][1], 0);
 			if (i % 2 == 1)
 			{
 				a[st[i][0]][st[i][1]] = 2;

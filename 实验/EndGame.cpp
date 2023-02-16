@@ -33,17 +33,7 @@ void EndGame(int type,int situation)
 		{
 			if (msg.x >= 250 && msg.x <= 350 && msg.y >= 540 && msg.y <= 580)
 			{
-				if (type == 1)
-				{
-					UI();
-					ClickBottom();
-				}
-				else
-					if (type == 2)
-					{
-						UI();
-						ClickBottom2();
-					}
+				StartUI();
 			}
 			if (msg.x >= 360 && msg.x <= 460 && msg.y >= 540 && msg.y <= 580)
 			{

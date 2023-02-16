@@ -2,11 +2,15 @@
 #include<stdio.h>
 #include"gobang.h"
 
-void PrintChess(int step,int x,int y)
+void PrintChess(int step, int x, int y, int color)
 {
 	const int r = 12;
 	TCHAR stepch[10];
 	ChangeColor();
+	if (color != 0)
+	{
+		settextcolor(RGB(color, 0, 0));
+	}
 	fillcircle(x * 30, y * 30 + 60, r);
 	_stprintf_s(stepch, _T("%d"), step);
 	if (step >= 100)
